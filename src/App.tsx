@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
 
+// Style
+import "./styles/app.css";
+
+// Select
+import Select from "./@select";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form onSubmit={(e) => e.preventDefault()}>
+      <h1>Rick and Morty Sevdalısı Formu</h1>
+      <p>
+        Merhaba Rick and Morty hayranı! Siz de bu eğlenceli ve absürd bilim
+        kurgu dünyasına derin bir sevgi besliyorsanız, Rick and Morty evrenine
+        olan tutkunuzu bizimle paylaşabilirsiniz.
+      </p>
+      <div className="form-item">
+        <label htmlFor="name">İsim</label>
+        <input id="name" type="text" placeholder="İsim" />
+      </div>
+      <div className="form-item">
+        <label htmlFor="email">Email</label>
+        <input id="email" type="email" placeholder="Email" />
+      </div>
+      <div className="form-item">
+        <label htmlFor="select-input">Sevdiğim Karakterler</label>
+        <Select />
+      </div>
+
+      <button>Gönder</button>
+    </form>
   );
 }
 
